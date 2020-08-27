@@ -1,73 +1,66 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        app
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <main>
+    <MainBannerSection/>
+    <PromoSection/>
+    <AdvantagesSection/>
+    <ProductsSection/>
+    <FaqSection/>
+  </main>
 </template>
 
 <script>
-export default {}
+import MainBannerSection from '@/components/MainBanner/MainBannerSection';
+import PromoSection from '@/components/Promo';
+import AdvantagesSection from '@/components/Advantages/AdvantagesSection';
+import ProductsSection from '@/components/Products/ProductsSection';
+import FaqSection from '@/components/FAQ/FaqSection';
+export default {
+  components: { MainBannerSection, PromoSection, AdvantagesSection, ProductsSection, FaqSection },
+  async fetch({ store }) {
+    await store.dispatch('content/fetch')
+  }
+}
 </script>
 
-<style>
+<style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Manrope', sans-serif;
+}
+:root {
+  font-size: 16px;
+}
 .container {
+  width: 100%;
+  max-width: 1260px;
+  padding: 0 30px;
   margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.section {
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 112%;
+    color: #092433;
+    margin-bottom: 16px;
+  }
+  &__desc {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 125%;
+    color: #092433;
+  }
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+@media only screen and (max-width: 1200px) {
+  .container {
+    padding: 0 16px;
+  }
 }
 </style>
