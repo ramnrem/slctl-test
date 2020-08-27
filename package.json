@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.2",
+    "nuxt": "^2.14.0",
+    "nuxt-svg-loader": "^1.2.0",
+    "swiper": "^6.1.2",
+    "vue-awesome-swiper": "^4.1.1"
+  },
+  "devDependencies": {}
+}
