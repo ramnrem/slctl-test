@@ -1,25 +1,25 @@
 <template>
   <section class="main-banner-section">
-    <div class="container">
-      <client-only>
-        <swiper class="swiper" :options="swiperOption">
-          <swiper-slide v-for="item in banners" :key="item.id">
+    <div class="container">=
+      <div class="swiper" v-swiper="swiperOption">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="item in banners" :key="item.id">
             <SlideItem
               :title="item.title"
               :description="item.description"
               :btnContent="item.button"
             />
-          </swiper-slide>
+          </div>
+        </div>
 
-          <div class="swiper__button swiper__button_prev" slot="button-prev">
-            <PrevIcon/>
-          </div>
-          <div class="swiper__pagination" slot="pagination"></div>
-          <div class="swiper__button swiper__button_next" slot="button-next">
-            <NextIcon/>
-          </div>
-        </swiper>
-      </client-only>
+        <div class="swiper__button swiper__button_prev" slot="button-prev">
+          <PrevIcon/>
+        </div>
+        <div class="swiper__pagination" slot="pagination"></div>
+        <div class="swiper__button swiper__button_next" slot="button-next">
+          <NextIcon/>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -80,7 +80,7 @@ export default {
     cursor: pointer;
     position: absolute;
     z-index: 999;
-    bottom: 20px;
+    bottom: 30px;
     &:focus {
       outline: none;
     }
@@ -94,6 +94,7 @@ export default {
   &__pagination {
     display: inline-flex;
     width: 100px;
+    bottom: 37px;
     position: absolute;
     left: calc(50% - 50px);
     justify-content: center;
@@ -119,7 +120,7 @@ export default {
     }
     
     &__button {
-      bottom: 20px;
+      bottom: 30px;
       &_prev {
         left: 16px;
       }

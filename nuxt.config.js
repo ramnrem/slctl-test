@@ -8,7 +8,7 @@ export default {
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
-  target: "static",
+  target: "server",
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -41,7 +41,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [{ src: "@/plugins/vue-awesome-swiper", mode: "client" }],
+  plugins: [{ src: "@/plugins/vue-awesome-swiper" }],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -59,5 +59,8 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {}
+  build: {},
+  router: {
+    base: ""
+  }
 };
